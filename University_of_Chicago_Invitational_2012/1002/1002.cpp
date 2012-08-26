@@ -2,102 +2,63 @@
 //#include <algorithm>
 //#include <iomanip>
 #include <cstring>
-//#include <vector>
+#include <vector>
 //#include <queue>
 //#include <list>
+//#include <pair>
+#include <iostream>
+#define N 10000
 
+#define ll long long
 using namespace std;
+typedef pair<long long ,long long> llp;
+
+
+ll x[N];
+ll cacu(ll x, llp g)
+{
+    return x*g.first+x*x+g.second;
+}
+
+
+void updata(int ii,vector<llp> &g,llp x)
+{
+    while (g.size()-ii>1)
+    {
+        if (g[g.size()-1].second-(g[g.size()-1].first/2)*(g[g.size()-1].first/2) >= x.second-(x.first/2)*-(x.first/2) )
+            g.resize(g.size()-1);
+        else break;
+    }
+    g.push_back(x);
+}
 
 int main()
 {
-    int l,w;
-    while (scanf("%d %d",&l,&w)!=EOF)
+    int n,c;
+    while (scanf("%d %d",&n,&c)!=EOF)
     {
-        int ans = 0,tmp;
+        if (!n&&!c) break;
+        long long ans = 0,tmp;
+        for (int i=0;i<n;i++) scanf("%d",&x[i]);
+        vector<llp> g;
 
-            int ori[1000][1000];
-        //    int group[1000][1000];
-            int fin[1000][1000];
-        //    memset(group,0,sizeof(group));
-            memset(fin,0,sizeof(fin));
-            for (int i=0;i<l;i++)
+        g.push_back(make_pair(-2*x[0],x[0]*x[0]));
+        int ii=0;
+        for (int i = 0;;i++)
+        {
+            ii = 0;
+            while (g.size()-ii>1 && (cacu(x[i],g[ii+1])<cacu(x[i],g[ii])))
             {
-                for (int j=0;j<w;j++)
-                {
-                    scanf("%d",&ori[i][j]);
-                }
+                ii++;
             }
-            int a,b;
-            scanf("%d %d",&a,&b);
-            int sum = 0;
-            for (int i=0;i<l;i++)
+            ll v = c+cacu(x[i],g[ii]);
+            if (i==n-1)
             {
-                for (int j=0;j<b;j++)
-                    fin[i][0] +=ori[i][j];
-                sum += fin[i][0];
-                if (i>=a-1)
-                {
-                    if (ans < sum) ans =sum;
-                    sum -= fin[i-a+1][0];
-                }
+                printf("%I64d\n",v);
+                break;
             }
-
-            for (int i=1;i<w-b+1;i++)
-            {
-                sum = 0;
-                for (int j=0;j<l;j++)
-                {
-                    fin[j][i] = fin[j][i-1] - ori[j][i-1] + ori[j][i+b-1];
-                    sum += fin[j][i];
-                    if (j>=a-1)
-                    {
-                        if (ans < sum) ans =sum;
-                        sum -= fin[j-a+1][i];
-                    }
-                }
-            }
-
-
-        //    for (int i=0;i<a;i++)
-        //            group[0][0] += fin[i][0];
-        //    ans = group[0][0];
-        //    for (int i=1;i<l-a+1;i++)
-        //    {
-        //        group[i][0] = group[i-1][0] - fin[i-1][0] + fin [i+a-1][0];
-        //        if (ans < group[i][0]) ans = group[i][0];
-        //    }
-        ////
-        //    for (int i=0;i<w-b+1;i++)
-        //    {
-        //        for (int j=0;j<b;j++)
-        //            group[0][i]+=fin[j][i];
-        //        if (ans < group[0][i]) ans = group[0][i];
-        //    }
-        //
-        //
-        //    for (int i=1;i<l-a+1;i++)
-        //    {
-        //        for (int j=0;j<w-b+1;j++)
-        //        {
-        //            group[i][j] = group[i-1][j] - fin[i-1][j] + fin[i+a-1][j];
-        //            if (ans < group[i][j]) ans = group[i][j];
-        //        }
-        //    }
-//            for (int i=0;i<l-a+1;i++)
-//            {
-//                for (int j=0;j<w-b+1;j++)
-//                {
-//                    tmp = 0;
-//                    for (int k=i;k<i+a;k++)
-//                    tmp+= fin[k][j];
-//                    if (tmp>ans) ans =tmp;
-//                }
-//            }
-
-
-            printf("%d\n",ans);
+            updata(ii,g,make_pair(-2*x[i+1],v+x[i+1]*x[i+1]));
+        }
     }
-
-
     return 0;
 }
