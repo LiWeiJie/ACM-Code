@@ -12,18 +12,22 @@ using namespace std;
 struct NT
 {
     int no;
-    int num;
+    long long num;
 };
 
 #define N 200001
 int main()
 {
     int s,t;
-    long group[N];
+    NT group[N];
 
     while(scanf("%d %d",&s,&t)!=EOF)
     {
-        memset(group,0,sizeof(group));
+        for (int i=s;i<=t;i++)
+        {
+            group[i].no = 1;
+            group[i].num = 1;
+        }
         int tmp;
         int base;
         NT ans;
@@ -37,10 +41,11 @@ int main()
                 {
     //                base = j;
                     if (i*j/100+i > t) break;
-                    if (group[i*j/100+i]<(group[i]+1))
+                    if (group[i*j/100+i].no<(group[i].no+1))
                     {
 
-                        group[i*j/100+i]= group[i]+1;
+                        group[i*j/100+i].no= group[i].no+1;
+                        group[i*j/100+i].num = group[i].num;
 //                        if (i*j/100+i == 200000 && group[i*j/100+i]==49)
 //                            printf("%d\n",i);
 //                        if (group[i*j/100+i]==ans.no) ans.num++;
@@ -53,6 +58,14 @@ int main()
 //                            }
 //                        }
                     }
+                    else
+                    {
+                        if(group[i*j/100+i].no==(group[i].no+1))
+                        {
+                            group[i*j/100+i].num += group[i].num;
+                        }
+                    }
+
                 }
             int k=1;
         }
@@ -61,21 +74,22 @@ int main()
         {
 //            if (group[i]==49)
 //                printf("%d ",i);
-            if (group[i]==ans.no) ans.num++;
+            if (group[i].no==ans.no) ans.num+=group[i].num;
             else
             {
-                if (group[i]>ans.no)
+                if (group[i].no>ans.no)
                 {
-                    ans.no = group[i];
-                    ans.num = 1;
+                    ans.no = group[i].no;
+                    ans.num = group[i].num;
                 }
             }
         }
 
-        printf("%d\n%d\n",ans.no+1,ans.num);
+        printf("%d\n%lld\n",ans.no,ans.num);
     }
 
 
 
     return 0;
 }
+

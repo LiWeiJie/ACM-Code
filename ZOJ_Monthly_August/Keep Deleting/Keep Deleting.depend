@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1346057227 source:/home/ymwm/git/ACM-Code/ZOJ_Monthly_August/Keep Deleting/main.cpp
+	<algorithm>
+	<iomanip>
+	<cstring>
+	<vector>
+	<queue>
+	<list>
+	<iostream>
+	<fstream>
+

@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1346213871 source:/home/ymwm/git/ACM-Code/waterdeep/15/A/main.cpp
+	<stdio.h>
+	<algorithm>
+	<iomanip>
+	<cstring>
+	<vector>
+	<queue>
+	<list>
+
