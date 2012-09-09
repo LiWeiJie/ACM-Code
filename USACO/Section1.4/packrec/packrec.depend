@@ -1,14 +1,5 @@
 # depslib dependency file v1.0
-1346735694 source:/home/ymwm/git/ACM-Code/USACO/Section1.4/packrec/main.cpp
-	<stdio.h>
-	<algorithm>
-	<iomanip>
-	<cstring>
-	<vector>
-	<queue>
-	<list>
-
-1346735694 source:d:\ubuntu\git\acm-code\usaco\section1.4\packrec\main.cpp
+1347178114 source:e:\git\acm-code\usaco\section1.4\packrec\main.cpp
 	<stdio.h>
 	<algorithm>
 	<iomanip>
