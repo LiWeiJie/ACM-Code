@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1347197456 source:e:\git\acm-code\acmicpc\2012chengduonline\aliceandbob\main.cpp
+	<iostream>
+	<cstdio>
+	<set>
+	<algorithm>
+
