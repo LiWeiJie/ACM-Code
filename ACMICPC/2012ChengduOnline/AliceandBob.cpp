@@ -53,10 +53,14 @@ int main()
             {
                 if (o.size())
                 {
-                    set<int>::iterator it = o.upper_bound(g[i].y);
-                    it--;
-                    ans ++;
-                    o.erase(it);
+                    if (*(o.begin())<=g[i].y)
+                    {
+                        set<int>::iterator it = o.upper_bound(g[i].y);
+                        it--;
+                        ans ++;
+                        o.erase(it);
+                    }
+
                 }
             }
         }
