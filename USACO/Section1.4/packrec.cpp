@@ -99,7 +99,7 @@ void ty5(NT a,NT b,NT c,NT d)
         {
             tmp = a.p-c.p;
             tmp = min(tmp,d.p-b.p);
-            nt.p =nt.p-2*tmp;
+            nt.p =nt.p-tmp;
         }
     }
 
@@ -113,8 +113,8 @@ void ty5(NT a,NT b,NT c,NT d)
 
 int main()
 {
-//    freopen("packrec.in","r",stdin);
-//    freopen("packrec.out","w",stdout);
+    freopen("packrec.in","r",stdin);
+    freopen("packrec.out","w",stdout);
     NT g[4];
     bool f[5];
     memset(f,0,sizeof(f));
