@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1346226892 source:/home/ymwm/git/ACM-Code/waterdeep/15/E/main.cpp
-	<iomanip>
-	<cstring>
-	<iostream>
-
