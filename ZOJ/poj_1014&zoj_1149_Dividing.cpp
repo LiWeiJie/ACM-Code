@@ -1,3 +1,4 @@
+﻿//zoj_1149|| poj 1014 Diving
 #include <iostream>
 #include <cstdio>
 
