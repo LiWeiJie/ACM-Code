@@ -1,4 +1,4 @@
-//zoj 1406 Jungle Roads
+﻿//zoj 1406 Jungle Roads
 /*
 一看就是最小生成树的题目
 我这里用的是Prim方法。每次取与树的连通边值最小的一条。
@@ -21,9 +21,9 @@ using namespace std;
 
 
 //记录各个点之间的距离
-double maintains[MAXN][MAXN];
+int maintains[MAXN][MAXN];
 //记录每个端点与0号端点的最小距离
-double minimun[MAXN];
+int minimun[MAXN];
 //记录城市是否在最小生成树中
 bool used[MAXN];
 int n;
