@@ -1,3 +1,4 @@
+//zoj 2724 Windows Message Queue
 /*
  *简单题，使用stl的优先队列，
  *需要自己重写比较函数，如果优先级一样，就比较入queue的时间序号
