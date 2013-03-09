@@ -1,3 +1,8 @@
+//poj 2777 Count Color
+/*
+很基本的一个线段树题目
+适合线段树入门
+*/
 #include <iostream>
 #include <cstdio>
 #include <cstring>

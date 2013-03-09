@@ -1,4 +1,7 @@
-﻿//zoj 1002 Fire Net 每一个落子都会占用其可见范围内的行和列空间，那么这个空间就是此落子的花费。所以贪心，计算占用空间最小的格，take it
+﻿//zoj 1002 Fire Net 
+/*
+每一个落子都会占用其可见范围内的行和列空间，那么这个空间就是此落子的花费。所以贪心，计算占用空间最小的格，take it
+*/
 #include<iostream>
 const int maxn=5;
 char map[maxn][maxn] = { 0 };

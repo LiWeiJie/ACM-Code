@@ -1,4 +1,11 @@
-//hdu 1242 & zoj 1649
+﻿//hdu 1242 & zoj 1649
+/*
+直接bfs。有几个剪枝的地方。
+从angel的地方开始搜，一旦搜到朋友就退出
+guard的处理，因为遇到guard，step要额外加一，所以用优先队列来记录bfs
+10ms AC
+最痛苦的是，本来应当1A的，但是因为忘记判EOF，结果一直TLE，我交了9次才AC，第7次发现实在不对劲，怎么算都不可能tle的，于是把过程全部注释掉上交，结果还是tle。最终发现是忘了加EOF判断。浪费了1个小时
+*/
 #include <iostream>
 #include <cstdio>
 #include <queue>
