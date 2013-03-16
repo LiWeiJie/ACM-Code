@@ -3,7 +3,8 @@
 PROG:preface
 LANG:C++
 ID:apprent2
-
+把每个位数上的0-9种可能预先存放在数组上。
+然后遍历每一位计算就可以了
 */
 
 #include <iostream>
@@ -46,7 +47,6 @@ void to_string(int m)
         m/=10;
     }while (m!=0);
 }
-
 int main()
 {
     freopen("preface.in","r",stdin);
@@ -62,3 +62,4 @@ int main()
     }
     return 0;
 }
+
