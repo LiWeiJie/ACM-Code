@@ -48,21 +48,25 @@ void cover(int l,int r,int t,int b,int no,int col)
         count_col[col] += (r-l)*(t-b);
         return;
     }
+    //判断左边界
     if (l<s[no].l)
     {
         cover(l,s[no].l,t,b,no+1,col);
         l = s[no].l;
     }
+    //判断右边界
     if (r>s[no].r)
     {
         cover(s[no].r,r,t,b,no+1,col);
         r = s[no].r;
     }
+    //判断上边界
     if (t>s[no].t)
     {
         cover(l,r,t,s[no].t,no+1,col);
         t = s[no].t;
     }
+    //判断下边界
     if (b<s[no].b)
     {
         cover(l,r,s[no].b,b,no+1,col);
