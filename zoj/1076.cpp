@@ -1,6 +1,6 @@
+//zoj 1076 Gene Assembly
 //贪心
 //以结束时间降序排序，能加入队列的加入
-
 
 #include <iostream>
 #include <cstdio>
