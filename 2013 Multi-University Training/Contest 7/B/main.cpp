@@ -1,7 +1,7 @@
 //Building Fence
 //http://acm.hdu.edu.cn/showproblem.php?pid=4667
 /*
- *
+ * 把圆化为点，做凸包
  * author licatweijie
  * licatweijie@gmail.com
  */

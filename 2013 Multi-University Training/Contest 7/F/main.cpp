@@ -1,7 +1,7 @@
 //Backup Plan
 //http://acm.hdu.edu.cn/showproblem.php?pid=4671
 /*
- *
+ * 暴力+STL
  * author licatweijie
  * licatweijie@gmail.com
  */

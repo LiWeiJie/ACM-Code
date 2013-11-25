@@ -1,6 +1,7 @@
 //Balls Rearrangement
 //http://acm.hdu.edu.cn/showproblem.php?pid=4611
 //2013多校#2
+//划分为lcm(a,b)的大区间和余下的小区间
 #include <iostream>
 #include <cstdio>
 #include <cmath>
