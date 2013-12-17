@@ -16,6 +16,7 @@ int fa[MAXV];
 deque<int> pqu;
 bool visited[MAXV];
 int cnt[MAXV];
+int last[MAXV];
 
 struct edge
 {
@@ -31,6 +32,7 @@ void init(int v)
     memset(cnt,0,sizeof(cnt));
     memset(visited,false,sizeof(visited));
     memset(first,0,sizeof(first));
+    memset(last,0,sizeof(last));
     len = 0;
     V = v;
 
@@ -62,6 +64,7 @@ bool spfa(int st)
         for (int nt = first[now];nt!=0;nt = edges[nt].next){
             if (edges[nt].d + dist[now] < dist[edges[nt].y] ) {
                 dist[edges[nt].y] =  edges[nt].d + dist[now];
+                last[edges[nt].y] = now;
                 if (!visited[edges[nt].y]){
                     visited[edges[nt].y] = true;
                     cnt[edges[nt].y]++;
