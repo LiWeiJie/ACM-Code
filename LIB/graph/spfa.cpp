@@ -12,7 +12,6 @@
 #include <cstring>
 
 int dist[MAXV];
-int fa[MAXV];
 deque<int> pqu;
 bool visited[MAXV];
 int cnt[MAXV];
