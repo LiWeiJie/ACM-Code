@@ -1,8 +1,6 @@
 //poj 2472 106 miles to Chicago
 /*
- *  因为求安全性最大的路径，所以可以将dist[1]定位-1,再作spfa处理
- *  
- *
+ *  因为求安全性最大的路径，所以可以将dist[1]定为-1,再作spfa处理
  * spfa(st) 之后有dist[]得到距离
  */
 //licatweijei
